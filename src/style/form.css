@@ -1,0 +1,117 @@
+.container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    padding: 60px;
+    min-height: 100vh;
+    background: linear-gradient(#4671EA, #AC34E7);
+
+    transition: all .5s;
+}
+.title{
+    width: 100%;
+    padding: 15px;
+
+    background: #fff;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    text-align: center;
+
+    font-size: 22px;
+    font-weight: 600;
+    color: #4671EA;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.input-box{
+    width: 100%;
+    background: #fff;
+    border-bottom: .1px solid rgba(0, 0, 0, 0.4);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+    padding-bottom: 15px;
+}
+
+.input-box select{
+    border: none;
+    outline: none;
+    margin-left: 10px;
+    border: .7px solid rgba(0, 0, 0, 0.4);
+    border-radius: 2px;
+    font-size: 12px;
+    background: #fff;
+}
+
+.wrapper{
+    width: 100%;
+    
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom-right-radius: 4px;
+    border-bottom-left-radius: 4px;
+    padding: 25px 25px 30px;
+
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, .2);
+}
+.wrapper .info{
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    text-align: center;
+}
+form{
+    width: 100%;
+}
+.wrapper textarea{
+    width: 100%;
+    height: 220px;
+    padding: 15px;
+    margin-top: 15px;
+
+    border-radius: 4px;
+    border: none;
+    outline: none;
+    resize: none;
+    border-color: #bfbfbf;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.4);
+    
+    font-size: 16px;
+
+    transition: all .5s;
+
+}
+.wrapper button{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    border: none;
+    margin-top: 25px;
+    background: #4671EA;
+    color: #fff;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);    
+    font-weight: 500;
+    cursor: pointer;
+    transition: all .3s;
+}
+.wrapper button:hover{
+    height: 45px;
+}
+.wrapper textarea:focus{
+    padding: 14px;
+    border: 1px solid #4671EA;
+}
+
+textarea::-webkit-scrollbar{
+    width: 0px;
+}
+
+@media only screen and (max-width: 760px){
+}
