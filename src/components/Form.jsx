@@ -2,9 +2,17 @@ import { useEffect, useState } from 'react';
 import api from '../api/app';
 import '../style/form.css';
 
-
 export function Form() {
     const [ideias, setIdeias] = useState('');
+    const [selectValue, setSelectValue] = useState('');
+    const options = [
+        {id: '1', name: 'Marketing'}, 
+        {id: '2', name: 'Comercial'},
+        {id: '3', name: 'Engenharia'},
+        {id: '4', name: 'Serviços Gerais'},
+        {id: '5', name: 'Outros'},
+    ];
+
 
     useEffect(() => {
         api
@@ -18,29 +26,34 @@ export function Form() {
       function handleAdd() {
         api
           .post('/register', {
-            ideia: ideias
+            ideia: ideias,
+            setor:selectValue
           })
           .then((response) => {
             setIdeias(response.data);
           });
       }
+
     return (
         <div className="container">
             <div className="title">
-                Registre sua Ideia
+                Registre sua Iniciativa
             </div>
             <form>
                 <div className="user-details">
                     <div className="input-box">
-                        <span className='details'>Setor da ideia:</span>
-                        <select id="choose">
-                            <option value="marketing">Marketing</option>
-                            <option value="servicos-gerais">Serviços Gerais</option>
+                        <span className='details'>Área de atuação: </span>
+                        <select id="choose" value={selectValue} onChange={e => setSelectValue(e.target.value)}>
+                            {
+                                options.map((item, index)=> (
+                                    <option key={item.id} value={item.name}> {item.name} </option>
+                                ))
+                            }
                         </select>
                     </div>
 
                     <div className="wrapper">
-                        <span className='info'>Descreva sua ideia</span>
+                        <span className='info'>Descreva como é a sua ideia</span>
                         <textarea 
                          name="description"
                          id="description" 
